@@ -25,6 +25,6 @@ public class Image {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
-    @JsonBackReference
+    @JsonBackReference // to stop the n+1 problem use the @Transitent
     private Project project;
 }

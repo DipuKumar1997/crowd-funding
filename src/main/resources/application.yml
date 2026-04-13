@@ -1,0 +1,23 @@
+spring:
+  config:
+    import: "optional:file:.env[.properties]"
+  datasource:
+    url: jdbc:mysql://localhost:3306/crowdfundingdatabase
+    username: root
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: ${JWT_SECRET:alongrandomstringforlocaldevelopmentonssadadajdadajdly}
+  access:
+    expiration: 3600000 # 1 hour in ms
+  refresh:
+    expiration: 604800000 # 7 days in ms
+
+stripe:
+  secret:
+    key: ${STRIPE_SECRET_KEY}
